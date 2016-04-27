@@ -8,7 +8,6 @@ import javax.swing.Box;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import javax.swing.border.Border;
 
 public class UI extends JPanel{
 	private static final long serialVersionUID = -7156837893685441474L;
