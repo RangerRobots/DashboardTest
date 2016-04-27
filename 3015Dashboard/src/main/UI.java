@@ -23,7 +23,6 @@ public class UI extends JPanel{
 		l1.setForeground(Color.WHITE);
 		driver.add(l1);
 		driver.add(Box.createHorizontalStrut(900));
-		
 		JPanel values = new JPanel();
 		values.setBackground(Color.DARK_GRAY);
 		JLabel l2 = new JLabel("Values Panel");
