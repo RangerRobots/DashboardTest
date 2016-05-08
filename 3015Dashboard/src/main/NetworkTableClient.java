@@ -1,22 +1,29 @@
 package main;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 
 public class NetworkTableClient {
-	public void start(){
+	static NetworkTable table;
+	
+	public static void start(){
 		NetworkTable.setClientMode();
 		NetworkTable.setIPAddress("10.30.15.2");
-		NetworkTable table = NetworkTable.getTable("datatable");
-		
-		while(true){
-			try{
-				Thread.sleep(1000);
-			}catch(Exception e){
-				Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, e);
-			}
-		}
+		table = NetworkTable.getTable("datatable");
+	}
+	
+	public static void putNumber(String key, double value){
+		table.putNumber(key, value);
+	}
+	
+	public static void putBoolean(String key, boolean bool){
+		table.putBoolean(key, bool);
+	}
+	
+	public static double getNumber(String key, double defaultValue){
+		return table.getNumber(key, defaultValue);
+	}
+	
+	public static boolean getBoolean(String key, boolean defaultValue){
+		return table.getBoolean(key, defaultValue);
 	}
 }
